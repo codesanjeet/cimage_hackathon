@@ -1,0 +1,134 @@
+@import "tailwindcss";
+
+/* ─── Design tokens ────────────────────────────────────────────────────── */
+:root {
+  --bg-primary:   #0f1117;
+  --bg-card:      #1a1d27;
+  --bg-sidebar:   #13151f;
+  --accent:       #6366f1;
+  --accent-hover: #818cf8;
+  --font-inter:   "Inter", system-ui, sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  background-color: var(--bg-primary);
+  color-scheme: dark;
+}
+
+/* ─── Scrollbar ─────────────────────────────────────────────────────────── */
+::-webkit-scrollbar        { width: 6px; height: 6px; }
+::-webkit-scrollbar-track  { background: transparent; }
+::-webkit-scrollbar-thumb  { background: #2a2d3d; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #3a3d50; }
+
+/* ─── VMS utility classes (plain CSS — no @apply with opacity modifiers) ── */
+
+/* Input */
+.vms-input {
+  width: 100%;
+  background-color: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.10);
+  border-radius: 0.75rem;
+  padding: 0.75rem 1rem;
+  color: #f3f4f6;
+  font-size: 0.875rem;
+  transition: all 0.2s;
+  outline: none;
+}
+.vms-input::placeholder { color: #6b7280; }
+.vms-input:focus {
+  border-color: rgba(99,102,241,0.6);
+  box-shadow: 0 0 0 2px rgba(99,102,241,0.25);
+}
+.vms-input:disabled { opacity: 0.5; cursor: not-allowed; }
+
+/* Button base */
+.vms-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.625rem 1rem;
+  border-radius: 0.75rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: all 0.2s;
+  cursor: pointer;
+  border: 1px solid transparent;
+}
+.vms-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+.vms-btn-primary {
+  display: inline-flex; align-items: center; justify-content: center;
+  gap: 0.5rem; padding: 0.625rem 1rem; border-radius: 0.75rem;
+  font-size: 0.875rem; font-weight: 500; transition: all 0.2s; cursor: pointer;
+  background-color: #6366f1;
+  color: #fff;
+  border: 1px solid transparent;
+  box-shadow: 0 4px 14px rgba(99,102,241,0.3);
+}
+.vms-btn-primary:hover:not(:disabled) { background-color: #818cf8; }
+.vms-btn-primary:disabled { opacity: 0.5; cursor: not-allowed; }
+
+.vms-btn-ghost {
+  display: inline-flex; align-items: center; justify-content: center;
+  gap: 0.5rem; padding: 0.625rem 1rem; border-radius: 0.75rem;
+  font-size: 0.875rem; font-weight: 500; transition: all 0.2s; cursor: pointer;
+  background-color: rgba(255,255,255,0.05);
+  color: #d1d5db;
+  border: 1px solid rgba(255,255,255,0.10);
+}
+.vms-btn-ghost:hover:not(:disabled) { background-color: rgba(255,255,255,0.10); }
+.vms-btn-ghost:disabled { opacity: 0.5; cursor: not-allowed; }
+
+.vms-btn-danger {
+  display: inline-flex; align-items: center; justify-content: center;
+  gap: 0.5rem; padding: 0.625rem 1rem; border-radius: 0.75rem;
+  font-size: 0.875rem; font-weight: 500; transition: all 0.2s; cursor: pointer;
+  background-color: rgba(220,38,38,0.15);
+  color: #f87171;
+  border: 1px solid rgba(239,68,68,0.30);
+}
+.vms-btn-danger:hover:not(:disabled) { background-color: rgba(220,38,38,0.25); }
+.vms-btn-danger:disabled { opacity: 0.5; cursor: not-allowed; }
+
+.vms-btn-success {
+  display: inline-flex; align-items: center; justify-content: center;
+  gap: 0.5rem; padding: 0.625rem 1rem; border-radius: 0.75rem;
+  font-size: 0.875rem; font-weight: 500; transition: all 0.2s; cursor: pointer;
+  background-color: rgba(5,150,105,0.15);
+  color: #34d399;
+  border: 1px solid rgba(16,185,129,0.30);
+}
+.vms-btn-success:hover:not(:disabled) { background-color: rgba(5,150,105,0.25); }
+.vms-btn-success:disabled { opacity: 0.5; cursor: not-allowed; }
+
+/* Card */
+.vms-card {
+  background-color: #1a1d27;
+  border: 1px solid rgba(255,255,255,0.05);
+  border-radius: 1rem;
+}
+
+/* Page shell — sidebar offset on md+ */
+.vms-page { margin-left: 0; min-height: 100vh; }
+@media (min-width: 768px) { .vms-page { margin-left: 16rem; } }
+
+/* Table */
+.vms-table { width: 100%; font-size: 0.875rem; }
+.vms-table th {
+  font-size: 0.75rem; font-weight: 600; color: #6b7280;
+  text-transform: uppercase; letter-spacing: 0.05em;
+  text-align: left; padding: 0.75rem 1rem;
+  background-color: rgba(255,255,255,0.02);
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+.vms-table td {
+  padding: 0.875rem 1rem;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  color: #d1d5db;
+}
+.vms-table tr:last-child td { border-bottom: none; }
+.vms-table tr:hover td   { background-color: rgba(255,255,255,0.02); }
