@@ -1,6 +1,6 @@
 # Campus VMS — Smart Campus Visitor Management System
 
-> **Tech Stack:** Next.js 14 · FastAPI · Docker · Gemini AI Risk Engine
+> **Tech Stack:** Next.js 14 · FastAPI · Docker · Gemini AI Risk Engine . Postgresql
 
 ---
 
