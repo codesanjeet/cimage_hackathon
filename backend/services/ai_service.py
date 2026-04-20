@@ -6,7 +6,7 @@ from google import genai
 import os
 import json
 
-GEMINI_API_KEY = os.getenv("GEMINI_API_KEY", "AIzaSyCgsvgfaRJfxkJ09V5RH6w4q2IYQGFxubM")
+GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
 
 
 async def analyze_visitor(db: AsyncSession, visitor_id: int) -> dict:
